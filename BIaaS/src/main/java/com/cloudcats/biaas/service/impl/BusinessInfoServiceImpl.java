@@ -2,10 +2,12 @@ package com.cloudcats.biaas.service.impl;
 
 import com.cloudcats.biaas.dto.BusinessInfoDto;
 import com.cloudcats.biaas.service.BusinessInfoService;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class BusinessInfoServiceImpl implements BusinessInfoService {
 
 //    @Autowired
