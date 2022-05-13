@@ -8,7 +8,7 @@ import { IList } from "./launch";
   providedIn: 'root'
 })
 export class LaunchService {
-  private myUrl = 'api/launch/DiversityInfo.json';
+  private myUrl = 'json/DiversityInfo.json';
 
   constructor(private http: HttpClient) { }
 
