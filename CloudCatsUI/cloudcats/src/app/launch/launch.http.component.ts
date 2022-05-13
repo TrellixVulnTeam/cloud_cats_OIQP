@@ -9,11 +9,12 @@ import { IList } from "./launch";
 })
 export class LaunchService {
   private myUrl = 'json/DiversityInfo.json';
+  private cloudCatsApiUrl = 'https://cloud-cats-350015.ue.r.appspot.com/info/businesses';
 
   constructor(private http: HttpClient) { }
 
   getLists(): Observable<IList[]> {
-    return this.http.get<IList[]>(this.myUrl)
+    return this.http.get<IList[]>(this.cloudCatsApiUrl)
       .pipe(
         tap(data => console.log('All: ', JSON.stringify(data))),
         catchError(this.handleError)
@@ -21,10 +22,10 @@ export class LaunchService {
   }
 
   
-  getList(id: number): Observable<IList | undefined> {
+  getList(id: string): Observable<IList | undefined> {
     return this.getLists()
       .pipe(
-        map((places: IList[]) => places.find(x => x.ein === id))
+        map((places: IList[]) => places.find(x => x.businessFEIN === id))
       );
   }
 
