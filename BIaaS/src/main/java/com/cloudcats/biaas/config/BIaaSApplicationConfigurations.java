@@ -14,7 +14,8 @@ public class BIaaSApplicationConfigurations {
     public FilterRegistrationBean corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("https://storage.googleapis.com/cloud-cats-ui");
+        config.addAllowedOrigin("https://storage.googleapis.com");
+        config.addAllowedOrigin("http://localhost:4200");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         source.registerCorsConfiguration("/**", config);
