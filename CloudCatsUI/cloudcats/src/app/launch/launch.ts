@@ -1,7 +1,7 @@
 export interface IList {
     businessName: string;
 	ein: number;
-	businessStatus: string;
+	businessState: string;
 	owners: string;
 	minorityOwned: string;
 	womenOwned: string;

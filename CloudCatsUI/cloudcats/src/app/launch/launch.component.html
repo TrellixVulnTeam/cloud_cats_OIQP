@@ -2,7 +2,7 @@
     <div class="card-body">
       <div class="container-fluid">
         <div class="text-center">
-          <img src="./assets/images/logo.jpeg"
+          <img src="./assets/images/cloudcat.png"
                class="img-responsive center-block"
                style="max-height:300px;padding-bottom:50px" />
         </div>
@@ -15,21 +15,25 @@
         <table class='table'>
    <thead>
      <tr>
-       
+       <th>Business ID</th>
        <th>Business Name</th>
-       <th>Business Status</th>
+       <th>Business State</th>
+       <th>FEID</th>
        <th>Owners</th>
-       <th>Minority</th>
+       <th>Minority Owned</th>
+       <th>Womne Owned</th>
        <th>Small Business</th>
      </tr>
    </thead>
    <tbody>
      <tr *ngFor='let place of places'>
-       
+       <td>ID</td>
        <td>{{ place.businessName }}</td>
-       <td>{{ place.businessStatus}}</td>
+       <td>{{ place.businessState}}</td>
+       <td>NONE</td>
        <td>{{ place.owners }}</td>
        <td>{{ place.minorityOwned }}</td>
+       <td>{{ place.womenOwned }}</td>
        <td>{{ place.smallBusiness }}</td>
      </tr>
    </tbody>

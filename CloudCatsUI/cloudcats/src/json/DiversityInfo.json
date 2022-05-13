@@ -3,7 +3,7 @@
 	{
 		"businessName": "Altum Inc",
 		"ein": 12345,
-		"businessStatus": "Active",
+		"businessState": "NY",
 		"owners": "John Ryan, Mercy Freddie, Walter Johns",
 		"minorityOwned": "true",
 		"womenOwned": "false",
@@ -12,7 +12,7 @@
 	{
 		"businessName": "O Sullivans Computer, LLC",
 		"ein": 32145,
-		"businessStatus": "Active",
+		"businessState": "NC",
 		"owners": "Cynthia Walters",
 		"minorityOwned": "false",
 		"womenOwned": "true",
@@ -21,7 +21,7 @@
 	{
 		"businessName": "Peterson Concrete Tank CO, Inc",
 		"ein": 543232,
-		"businessStatus": "Active",
+		"businessState": "NY",
 		"owners": "Peterson",
 		"minorityOwned": "false",
 		"womenOwned": "false",
@@ -30,7 +30,7 @@
 	{
 		"businessName": "Altum Inc",
 		"ein": 12345,
-		"businessStatus": "Active",
+		"businessState": "MS",
 		"owners": "John Ryan, Mercy Freddie, Walter Johns",
 		"minorityOwned": "true",
 		"womenOwned": "false",
@@ -39,7 +39,7 @@
 	{
 		"businessName": "O Sullivans Computer, LLC",
 		"ein": 32145,
-		"businessStatus": "Active",
+		"businessState": "CO",
 		"owners": "Cynthia Walters",
 		"minorityOwned": "false",
 		"womenOwned": "true",
@@ -48,7 +48,7 @@
 	{
 		"businessName": "Peterson Concrete Tank CO, Inc",
 		"ein": 543232,
-		"businessStatus": "Active",
+		"businessState": "NY",
 		"owners": "Peterson",
 		"minorityOwned": "false",
 		"womenOwned": "false",
@@ -57,7 +57,7 @@
 	{
 		"businessName": "Altum Inc",
 		"ein": 12345,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "John Ryan, Mercy Freddie, Walter Johns",
 		"minorityOwned": "true",
 		"womenOwned": "false",
@@ -66,7 +66,7 @@
 	{
 		"businessName": "O Sullivans Computer, LLC",
 		"ein": 32145,
-		"businessStatus": "Active",
+		"businessState": "TN",
 		"owners": "Cynthia Walters",
 		"minorityOwned": "false",
 		"womenOwned": "true",
@@ -75,7 +75,7 @@
 	{
 		"businessName": "Peterson Concrete Tank CO, Inc",
 		"ein": 543232,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Peterson",
 		"minorityOwned": "false",
 		"womenOwned": "false",
@@ -84,7 +84,7 @@
 	{
 		"businessName": "Altum Inc",
 		"ein": 12345,
-		"businessStatus": "Active",
+		"businessState": "TN",
 		"owners": "John Ryan, Mercy Freddie, Walter Johns",
 		"minorityOwned": "true",
 		"womenOwned": "false",
@@ -93,7 +93,7 @@
 	{
 		"businessName": "O Sullivans Computer, LLC",
 		"ein": 32145,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Cynthia Walters",
 		"minorityOwned": "false",
 		"womenOwned": "true",
@@ -102,7 +102,7 @@
 	{
 		"businessName": "Peterson Concrete Tank CO, Inc",
 		"ein": 543232,
-		"businessStatus": "Active",
+		"businessState": "MS",
 		"owners": "Peterson",
 		"minorityOwned": "false",
 		"womenOwned": "false",
@@ -111,7 +111,7 @@
 	{
 		"businessName": "Altum Inc",
 		"ein": 12345,
-		"businessStatus": "Active",
+		"businessState": "AR",
 		"owners": "John Ryan, Mercy Freddie, Walter Johns",
 		"minorityOwned": "true",
 		"womenOwned": "false",
@@ -120,7 +120,7 @@
 	{
 		"businessName": "O Sullivans Computer, LLC",
 		"ein": 32145,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Cynthia Walters",
 		"minorityOwned": "false",
 		"womenOwned": "true",
@@ -129,7 +129,7 @@
 	{
 		"businessName": "Peterson Concrete Tank CO, Inc",
 		"ein": 543232,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Peterson",
 		"minorityOwned": "false",
 		"womenOwned": "false",
@@ -138,7 +138,7 @@
 	{
 		"businessName": "Altum Inc",
 		"ein": 12345,
-		"businessStatus": "Active",
+		"businessState": "UT",
 		"owners": "John Ryan, Mercy Freddie, Walter Johns",
 		"minorityOwned": "true",
 		"womenOwned": "false",
@@ -147,7 +147,7 @@
 	{
 		"businessName": "O Sullivans Computer, LLC",
 		"ein": 32145,
-		"businessStatus": "Active",
+		"businessState": "WA",
 		"owners": "Cynthia Walters",
 		"minorityOwned": "false",
 		"womenOwned": "true",
@@ -156,7 +156,7 @@
 	{
 		"businessName": "Peterson Concrete Tank CO, Inc",
 		"ein": 543232,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Peterson",
 		"minorityOwned": "false",
 		"womenOwned": "false",
@@ -165,7 +165,7 @@
 	{
 		"businessName": "Altum Inc",
 		"ein": 12345,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "John Ryan, Mercy Freddie, Walter Johns",
 		"minorityOwned": "true",
 		"womenOwned": "false",
@@ -174,7 +174,7 @@
 	{
 		"businessName": "O Sullivans Computer, LLC",
 		"ein": 32145,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Cynthia Walters",
 		"minorityOwned": "false",
 		"womenOwned": "true",
@@ -183,7 +183,7 @@
 	{
 		"businessName": "Peterson Concrete Tank CO, Inc",
 		"ein": 543232,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Peterson",
 		"minorityOwned": "false",
 		"womenOwned": "false",
@@ -192,7 +192,7 @@
 	{
 		"businessName": "Altum Inc",
 		"ein": 12345,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "John Ryan, Mercy Freddie, Walter Johns",
 		"minorityOwned": "true",
 		"womenOwned": "false",
@@ -201,7 +201,7 @@
 	{
 		"businessName": "O Sullivans Computer, LLC",
 		"ein": 32145,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Cynthia Walters",
 		"minorityOwned": "false",
 		"womenOwned": "true",
@@ -210,7 +210,7 @@
 	{
 		"businessName": "Peterson Concrete Tank CO, Inc",
 		"ein": 543232,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Peterson",
 		"minorityOwned": "false",
 		"womenOwned": "false",
@@ -219,7 +219,7 @@
 	{
 		"businessName": "Altum Inc",
 		"ein": 12345,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "John Ryan, Mercy Freddie, Walter Johns",
 		"minorityOwned": "true",
 		"womenOwned": "false",
@@ -228,7 +228,7 @@
 	{
 		"businessName": "O Sullivans Computer, LLC",
 		"ein": 32145,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Cynthia Walters",
 		"minorityOwned": "false",
 		"womenOwned": "true",
@@ -237,7 +237,7 @@
 	{
 		"businessName": "Peterson Concrete Tank CO, Inc",
 		"ein": 543232,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Peterson",
 		"minorityOwned": "false",
 		"womenOwned": "false",
@@ -246,7 +246,7 @@
 	{
 		"businessName": "Altum Inc",
 		"ein": 12345,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "John Ryan, Mercy Freddie, Walter Johns",
 		"minorityOwned": "true",
 		"womenOwned": "false",
@@ -255,7 +255,7 @@
 	{
 		"businessName": "O Sullivans Computer, LLC",
 		"ein": 32145,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Cynthia Walters",
 		"minorityOwned": "false",
 		"womenOwned": "true",
@@ -264,7 +264,7 @@
 	{
 		"businessName": "Peterson Concrete Tank CO, Inc",
 		"ein": 543232,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Peterson",
 		"minorityOwned": "false",
 		"womenOwned": "false",
@@ -273,7 +273,7 @@
 	{
 		"businessName": "Altum Inc",
 		"ein": 12345,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "John Ryan, Mercy Freddie, Walter Johns",
 		"minorityOwned": "true",
 		"womenOwned": "false",
@@ -282,7 +282,7 @@
 	{
 		"businessName": "O Sullivans Computer, LLC",
 		"ein": 32145,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Cynthia Walters",
 		"minorityOwned": "false",
 		"womenOwned": "true",
@@ -291,7 +291,7 @@
 	{
 		"businessName": "Peterson Concrete Tank CO, Inc",
 		"ein": 543232,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Peterson",
 		"minorityOwned": "false",
 		"womenOwned": "false",
@@ -300,7 +300,7 @@
 	{
 		"businessName": "Altum Inc",
 		"ein": 12345,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "John Ryan, Mercy Freddie, Walter Johns",
 		"minorityOwned": "true",
 		"womenOwned": "false",
@@ -309,7 +309,7 @@
 	{
 		"businessName": "O Sullivans Computer, LLC",
 		"ein": 32145,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Cynthia Walters",
 		"minorityOwned": "false",
 		"womenOwned": "true",
@@ -318,7 +318,7 @@
 	{
 		"businessName": "Peterson Concrete Tank CO, Inc",
 		"ein": 543232,
-		"businessStatus": "Active",
+		"businessState": "Active",
 		"owners": "Peterson",
 		"minorityOwned": "false",
 		"womenOwned": "false",
