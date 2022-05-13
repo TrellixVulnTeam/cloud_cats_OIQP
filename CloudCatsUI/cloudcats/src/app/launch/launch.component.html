@@ -11,6 +11,29 @@
         <input type="text">
         <button type="button">Search</button>
         </div>
+
+        <table class='table'>
+   <thead>
+     <tr>
+       
+       <th>Business Name</th>
+       <th>Business Status</th>
+       <th>Owners</th>
+       <th>Minority</th>
+       <th>Small Business</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor='let place of places'>
+       
+       <td>{{ place.businessName }}</td>
+       <td>{{ place.businessStatus}}</td>
+       <td>{{ place.owners }}</td>
+       <td>{{ place.minorityOwned }}</td>
+       <td>{{ place.smallBusiness }}</td>
+     </tr>
+   </tbody>
+ </table>
         
       </div>
     </div>
