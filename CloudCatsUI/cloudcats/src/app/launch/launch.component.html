@@ -1,3 +1,5 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <div class="card">
     <div class="card-body">
       <div class="container-fluid">
@@ -33,11 +35,28 @@
        <td>{{ place.businessState}}</td>
        <td>NONE</td>
        <td>{{ place.owners }}</td>
-       <td>{{ place.minorityOwned }}</td>
-       <td>{{ place.womenOwned }}
-      
+
+       <td *ngIf="(place.minorityOwned == 'false')">
+        <i class="icon-remove"></i>
        </td>
-       <td>{{ place.smallBusiness }}</td>
+      <td *ngIf="(place.minorityOwned == 'true')">
+        <i class="icon-check-sign"></i>
+       </td>
+
+       <td *ngIf="(place.womenOwned == 'true')">
+        <i class="icon-check-sign"></i>
+       </td>
+       <td *ngIf="(place.womenOwned == 'false')">
+        <i class="icon-remove"></i>
+       </td>
+
+       <td *ngIf="(place.smallBusiness == 'true')">
+        <i class="icon-check-sign"></i>
+       </td>
+       <td *ngIf="(place.smallBusiness == 'false')">
+        <i class="icon-remove"></i>
+       </td>
+
      </tr>
    </tbody>
  </table>
