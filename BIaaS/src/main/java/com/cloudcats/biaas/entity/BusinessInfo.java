@@ -3,8 +3,11 @@ package com.cloudcats.biaas.entity;
 
 import lombok.Data;
 import org.springframework.cloud.gcp.data.spanner.core.mapping.Column;
+import org.springframework.cloud.gcp.data.spanner.core.mapping.Interleaved;
 import org.springframework.cloud.gcp.data.spanner.core.mapping.PrimaryKey;
 import org.springframework.cloud.gcp.data.spanner.core.mapping.Table;
+
+import java.util.List;
 
 
 @Table(name = "BUSINESS_INFO")
@@ -25,4 +28,7 @@ public class BusinessInfo {
 
     @Column(name = "OWNERS")
     private String businessOwners;
+
+    @Interleaved
+    private List<BusinessDiversityInfo> businessDiversityInfo;
 }

@@ -32,13 +32,6 @@ public class BusinessInfoService implements IBusinessInfoService {
     @Override
     public BusinessInfo getBusinessInfo(Integer businessId) {
         Optional<BusinessInfo> businessInfoOptional = businessInfoRepo.findById(businessId);
-        BusinessInfo businessInfo = businessInfoOptional.orElse(null);
-//
-//        if (businessInfo != null) {
-//            Optional<BusinessDiversityInfo> optionalBusinessDiversityInfo = businessDiversityInfoRepo.findById(businessInfo.getBusinessId());
-//            System.out.println(optionalBusinessDiversityInfo);
-//        }
-
-        return businessInfo;
+        return businessInfoOptional.orElse(null);
     }
 }
