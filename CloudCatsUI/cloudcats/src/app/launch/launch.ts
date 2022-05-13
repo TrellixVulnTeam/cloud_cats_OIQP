@@ -1,9 +1,15 @@
 export interface IList {
-    businessName: string;
-	ein: number;
+    businessId: string;
+	businessFEIN: string;
+	businessName: string;
 	businessState: string;
-	owners: string;
+	businessOwners: string;
+	businessDiversityInfo: diversityInfo;
+  }
+
+  export interface diversityInfo {
+	businessDiversityId: string;
 	minorityOwned: string;
-	womenOwned: string;
 	smallBusiness: string;
+	womenOwned: string;
   }

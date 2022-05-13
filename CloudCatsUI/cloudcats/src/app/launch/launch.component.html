@@ -10,57 +10,55 @@
         </div>
   
         <div style="text-align:center">
-          <div>Filter By:</div>
+          <div>Filter By Business Name:
           <input type='text'
           [(ngModel)]='listFilter' />
         </div>
+        </div>
 
         <table class='table'>
-   <thead>
-     <tr>
-       <th>Business ID</th>
-       <th>Business Name</th>
-       <th>Business State</th>
-       <th>FEID</th>
-       <th>Owners</th>
-       <th>Minority Owned</th>
-       <th>Women Owned</th>
-       <th>Small Business</th>
-     </tr>
-   </thead>
-   <tbody>
-     <tr *ngFor='let place of filteredList'>
-       <td>ID</td>
-       <td>{{ place.businessName }}</td>
-       <td>{{ place.businessState}}</td>
-       <td>NONE</td>
-       <td>{{ place.owners }}</td>
-
-       <td *ngIf="(place.minorityOwned == 'false')">
-        <i class="icon-remove"></i>
-       </td>
-      <td *ngIf="(place.minorityOwned == 'true')">
-        <i class="icon-check-sign"></i>
-       </td>
-
-       <td *ngIf="(place.womenOwned == 'true')">
-        <i class="icon-check-sign"></i>
-       </td>
-       <td *ngIf="(place.womenOwned == 'false')">
-        <i class="icon-remove"></i>
-       </td>
-
-       <td *ngIf="(place.smallBusiness == 'true')">
-        <i class="icon-check-sign"></i>
-       </td>
-       <td *ngIf="(place.smallBusiness == 'false')">
-        <i class="icon-remove"></i>
-       </td>
-
-     </tr>
-   </tbody>
- </table>
-        
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>FEIN</th>
+              <th>Name</th>
+              <th>State</th>
+              <th>Owners</th>
+              <th>Diversity ID</th>
+              <th>Minority Owned</th>
+              <th>Women Owned</th>
+              <th>Small Business</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let info of filteredList'>
+              <td>{{ info.businessId}}</td>
+              <td>{{ info.businessFEIN }}</td>
+              <td>{{ info.businessName}}</td>
+              <td>{{ info.businessState}}</td>
+              <td>{{ info.businessOwners }}</td>
+              <td>{{ info.businessDiversityInfo.businessDiversityId }}</td>
+              <td *ngIf="(info.businessDiversityInfo.minorityOwned == 'false')">
+                <i class="icon-remove"></i>
+              </td>
+              <td *ngIf="(info.businessDiversityInfo.minorityOwned == 'true')">
+                <i class="icon-check-sign"></i>
+              </td>
+              <td *ngIf="(info.businessDiversityInfo.womenOwned == 'true')">
+                <i class="icon-check-sign"></i>
+              </td>
+              <td *ngIf="(info.businessDiversityInfo.womenOwned == 'false')">
+                <i class="icon-remove"></i>
+              </td>
+              <td *ngIf="(info.businessDiversityInfo.smallBusiness == 'true')">
+                <i class="icon-check-sign"></i>
+              </td>
+              <td *ngIf="(info.businessDiversityInfo.smallBusiness == 'false')">
+                <i class="icon-remove"></i>
+              </td>      
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
