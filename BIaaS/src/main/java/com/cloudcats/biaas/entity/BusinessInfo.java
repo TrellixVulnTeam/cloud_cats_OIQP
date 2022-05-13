@@ -6,12 +6,13 @@ import org.springframework.cloud.gcp.data.spanner.core.mapping.Column;
 import org.springframework.cloud.gcp.data.spanner.core.mapping.PrimaryKey;
 import org.springframework.cloud.gcp.data.spanner.core.mapping.Table;
 
+
 @Table(name = "BUSINESS_INFO")
 @Data
 public class BusinessInfo {
     @PrimaryKey
     @Column(name = "BUS_ID")
-    private int businessId;
+    private Integer businessId;
 
     @Column(name = "BUS_FEIN")
     private String businessFEIN;

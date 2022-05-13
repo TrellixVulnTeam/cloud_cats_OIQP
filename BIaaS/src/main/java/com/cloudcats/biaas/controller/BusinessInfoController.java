@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class BusinessInfoController {
 
     @Autowired
-    private IBusinessInfoService IBusinessInfoService;
+    private IBusinessInfoService businessInfoService;
 
     @GetMapping("/info/businesses")
     public ResponseEntity<?> getBusinessesInfo() {
-        return new ResponseEntity<>(IBusinessInfoService.getBusinessesInfo(), HttpStatus.OK);
+        return new ResponseEntity<>(businessInfoService.getBusinessesInfo(), HttpStatus.OK);
     }
 
     @GetMapping("/info/businesses/{businessId}")
     public ResponseEntity<?>  getBusinessInfo(@PathVariable int businessId) {
-        return new ResponseEntity<>(IBusinessInfoService.getBusinessInfo(businessId), HttpStatus.OK);
+        return new ResponseEntity<>(businessInfoService.getBusinessInfo(businessId), HttpStatus.OK);
     }
 }
