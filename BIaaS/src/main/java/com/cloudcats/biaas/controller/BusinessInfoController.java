@@ -20,12 +20,16 @@ public class BusinessInfoController {
     }
 
     @GetMapping("/info/businesses/{businessId}")
-    public ResponseEntity<?>  getBusinessInfo(@PathVariable int businessId) {
+    public ResponseEntity<?> getBusinessInfo(@PathVariable int businessId) {
         return new ResponseEntity<>(businessInfoService.getBusinessInfo(businessId), HttpStatus.OK);
     }
 
     @PostMapping("/info/businesses")
-    public ResponseEntity<?>  getBusinessInfoPagination(@RequestBody BusinessInfoPageRequest businessInfoPaginationRequest) {
-        return new ResponseEntity<>(businessInfoService.getBusinessInfoPagination(businessInfoPaginationRequest), HttpStatus.OK);
+    public ResponseEntity<?> getBusinessInfoPagination(@RequestBody(required = false) BusinessInfoPageRequest businessInfoPageRequest) {
+        if (businessInfoPageRequest == null) {
+            businessInfoPageRequest = new BusinessInfoPageRequest();
+        }
+
+        return new ResponseEntity<>(businessInfoService.getBusinessInfoPagination(businessInfoPageRequest), HttpStatus.OK);
     }
 }

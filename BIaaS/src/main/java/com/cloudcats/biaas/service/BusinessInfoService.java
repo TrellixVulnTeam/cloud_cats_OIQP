@@ -43,7 +43,7 @@ public class BusinessInfoService implements IBusinessInfoService {
     public BusinessInfoPageResponse getBusinessInfoPagination(BusinessInfoPageRequest businessInfoPaginationOption) {
         BusinessInfoPageResponse businessInfoPageResponse = new BusinessInfoPageResponse();
 
-        int pageNumber = businessInfoPaginationOption.getPageNumber();
+        int pageNumber = businessInfoPaginationOption.getPageNumber() - 1;
         int pageSize = businessInfoPaginationOption.getPageSize();
         String sortBy = businessInfoPaginationOption.getSortBy();
         Pageable paging = PageRequest.of(pageNumber, pageSize, Sort.by(sortBy));
@@ -51,7 +51,7 @@ public class BusinessInfoService implements IBusinessInfoService {
         Page<BusinessInfo> businessInfoPage = businessInfoRepo.findAll(paging);
 
         if (businessInfoPage.hasContent()) {
-            businessInfoPageResponse.setPageNumber(pageNumber);
+            businessInfoPageResponse.setPageNumber(businessInfoPaginationOption.getPageNumber());
             businessInfoPageResponse.setPageSize(pageSize);
             businessInfoPageResponse.setTotalPages(businessInfoPage.getTotalPages());
             businessInfoPageResponse.setSortBy(sortBy);
