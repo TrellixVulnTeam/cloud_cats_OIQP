@@ -1,5 +1,6 @@
 plugins {
 	id 'org.springframework.boot' version '2.6.7'
+	id 'com.google.cloud.tools.jib' version '3.2.1'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
@@ -7,7 +8,16 @@ plugins {
 group = 'cats.cloud'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
-
+jib.to.image = 'gcr.io/cloud-cats-350015/data-ingestion'
+jib {
+	to {
+		image = 'gcr.io/cloud-cats-350015/data-ingestion'
+		auth {
+			username = '_json_key'
+			password = file('key.json').text
+		}
+	}
+}
 repositories {
 	mavenCentral()
 }
