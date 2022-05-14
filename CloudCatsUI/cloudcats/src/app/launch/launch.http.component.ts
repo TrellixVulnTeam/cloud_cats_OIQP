@@ -8,9 +8,9 @@ import { IList } from "./launch";
   providedIn: 'root'
 })
 export class LaunchService {
-  private myUrl = 'json/DiversityInfo.json';
-  private cloudCatsApiUrl = 'https://cloud-cats-350015.ue.r.appspot.com/info/businesses';
-
+  private myUrl = 'json/DiversityInfo.json'
+    // private cloudCatsApiUrl = 'https://cloud-cats-350015.ue.r.appspot.com/info/businesses';
+private cloudCatsApiUrl = 'https://biaas-t6oppuclgq-uc.a.run.app/info/businesses';
   constructor(private http: HttpClient) { }
 
   getLists(): Observable<IList[]> {

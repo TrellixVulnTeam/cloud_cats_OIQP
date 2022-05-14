@@ -38,7 +38,7 @@
               <td>{{ info.businessState}}</td>
               <td>{{ info.businessOwners }}</td>
               <td>{{ info.businessDiversityInfo.businessDiversityId }}</td>
-              <td *ngIf="(info.businessDiversityInfo.minorityOwned == 'false')">
+              <td *ngIf="(info.businessDiversityInfo.minorityOwned == null)">
                 <i class="icon-remove"></i>
               </td>
               <td *ngIf="(info.businessDiversityInfo.minorityOwned == 'true')">
@@ -47,13 +47,13 @@
               <td *ngIf="(info.businessDiversityInfo.womenOwned == 'true')">
                 <i class="icon-check-sign"></i>
               </td>
-              <td *ngIf="(info.businessDiversityInfo.womenOwned == 'false')">
+              <td *ngIf="(info.businessDiversityInfo.womenOwned == null)">
                 <i class="icon-remove"></i>
               </td>
               <td *ngIf="(info.businessDiversityInfo.smallBusiness == 'true')">
                 <i class="icon-check-sign"></i>
               </td>
-              <td *ngIf="(info.businessDiversityInfo.smallBusiness == 'false')">
+              <td *ngIf="(info.businessDiversityInfo.smallBusiness == null)">
                 <i class="icon-remove"></i>
               </td>      
             </tr>
