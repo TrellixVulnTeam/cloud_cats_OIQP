@@ -1,8 +1,0 @@
-# Function dependencies, for example:
-# package>=version
-requests>=2.27.1
-beautifulsoup4>=4.11.1
-numpy>=1.22.3
-pandas>=1.4.2
-google-cloud>=0.34.0
-google-cloud-spanner>=3.14.0
