@@ -10,14 +10,24 @@
             class="img-responsive center-block"
             style="max-height:300px;" /></span>         
             <span style="padding-top: 60px; padding-bottom: 20px;">
-              <input class="inputStyle" stlye="width: 200px; margin-bottom: 30px;" type="input" placeholder="Filter by Business Name" [(ngModel)]='listFilter' >
+                <input class="inputStyle" stlye="width: 200px; margin-bottom: 30px;" type="input" placeholder="Filter by Business Name" [(ngModel)]='listFilter' >
+            
             </span>
         </div>
         <span style="padding-bottom: 20px;"></span>
      </div>
+    
+   
 
-     <button mat-button (click)="exporter.exportTable('xlsx')"> Export to Excel</button>
-     <button mat-button (click)="exporter.exportTable('csv')"> Export to CSV</button>
+
+      <div class="text-right">
+        <button class="xcsvButtonx" mat-button (click)="exporter.exportTable('xlsx')"> Export to Excel</button>
+           <button class="xcsvButton" mat-button (click)="exporter.exportTable('csv')"> Export to CSV</button>
+      </div>
+     
+
+
+     
      <mat-table matTableExporter class="info-table mat-elevation-z8" [dataSource]="dataSource" matSort #empTbSortWithObject="matSort" #exporter="matTableExporter">
       
       <ng-container matColumnDef="businessName">
@@ -85,5 +95,5 @@
         <mat-spinner [diameter]="50"></mat-spinner>
       </div>
     </div>
-     <mat-paginator [pageSizeOptions]="[12,50,100]" showFirstLastButtons></mat-paginator> 
+     <mat-paginator [pageSizeOptions]="[10,50,100]" showFirstLastButtons></mat-paginator> 
   </div>

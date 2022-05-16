@@ -12,6 +12,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableExporterModule } from 'mat-table-exporter';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     MatProgressSpinnerModule,
     MatSortModule,
     MatFormFieldModule,
-    MatTableExporterModule
+    MatTableExporterModule,
+    MatButtonModule
     
   ],
   providers: [],
