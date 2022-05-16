@@ -12,5 +12,6 @@ public class BusinessInfoPageResponse {
     long totalPages;
     long totalElements;
     String sortBy;
+    String searchBy;
     List<BusinessInfo> businessInfoList;
 }
