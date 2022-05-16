@@ -11,7 +11,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { MatTableExporterModule } from 'mat-table-exporter';
 
 
 @NgModule({
@@ -30,7 +30,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatTableModule,
     MatProgressSpinnerModule,
     MatSortModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTableExporterModule
     
   ],
   providers: [],

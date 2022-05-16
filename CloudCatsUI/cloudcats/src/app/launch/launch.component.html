@@ -15,7 +15,10 @@
         </div>
         <span style="padding-bottom: 20px;"></span>
      </div>
-     <mat-table class="info-table mat-elevation-z8" [dataSource]="dataSource" matSort #empTbSortWithObject="matSort">
+
+     <button mat-button (click)="exporter.exportTable('xlsx')"> Export to Excel</button>
+     <button mat-button (click)="exporter.exportTable('csv')"> Export to CSV</button>
+     <mat-table matTableExporter class="info-table mat-elevation-z8" [dataSource]="dataSource" matSort #empTbSortWithObject="matSort" #exporter="matTableExporter">
       
       <ng-container matColumnDef="businessName">
           <mat-header-cell *matHeaderCellDef  mat-sort-header style="background-color: #333333; color: white">Name</mat-header-cell>
@@ -84,5 +87,3 @@
     </div>
      <mat-paginator [pageSizeOptions]="[12,50,100]" showFirstLastButtons></mat-paginator> 
   </div>
-
-  
