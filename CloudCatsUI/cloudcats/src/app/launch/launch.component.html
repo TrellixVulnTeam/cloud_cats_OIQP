@@ -1,64 +1,88 @@
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
 <div class="card">
     <div class="card-body">
       <div class="container-fluid">
-        <div class="text-center">
-          <img src="./assets/images/cloudcat.png"
-               class="img-responsive center-block"
-               style="max-height:300px;padding-bottom:50px" />
+        <div style="display: flex; justify-content: space-between;">
+          <span class="text-left"><img src="./assets/images/cloudcatlogo.png"
+            class="img-responsive center-block"
+            style="max-height:300px;" /></span>         
+            <span style="padding-top: 60px; padding-bottom: 20px;">
+              <input class="inputStyle" stlye="width: 200px; margin-bottom: 30px;" type="input" placeholder="Filter by Business Name" [(ngModel)]='listFilter' >
+            </span>
         </div>
+        <span style="padding-bottom: 20px;"></span>
+     </div>
+     <mat-table class="info-table mat-elevation-z8" [dataSource]="dataSource" matSort #empTbSortWithObject="matSort">
+      
+      <ng-container matColumnDef="businessName">
+          <mat-header-cell *matHeaderCellDef  mat-sort-header style="background-color: #333333; color: white">Name</mat-header-cell>
+          <mat-cell *matCellDef="let info">{{info.businessName}}</mat-cell>
+      </ng-container>
   
-        <div style="text-align:center">
-          <div>Filter By Business Name:
-          <input type='text'
-          [(ngModel)]='listFilter' />
-        </div>
-        </div>
+      <ng-container matColumnDef="businessState">
+          <mat-header-cell mat-sort-header *matHeaderCellDef style="background-color: #333333; color: white">State</mat-header-cell>
+          <mat-cell class="businessState-cell"
+                    *matCellDef="let info">{{info.businessState}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="businessFEIN">
+          <mat-header-cell *matHeaderCellDef style="background-color: #333333; color: white">FEIN</mat-header-cell>
+          <mat-cell class="businessFIEN-cell"
+                    *matCellDef="let info">{{info.businessFEIN}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="businessOwners"> 
+        <mat-header-cell mat-sort-header *matHeaderCellDef style="background-color: #333333; color: white">Owners</mat-header-cell>
+        <mat-cell class="businessOwners-cell"
+                  *matCellDef="let info">{{info.businessOwners}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="minorityOwned">
+        <mat-header-cell *matHeaderCellDef style="background-color: #333333; color: white">Minority Owned</mat-header-cell>
+        <mat-cell class="minorityOwned-cell"
+                *matCellDef="let info">
+          <ng-container *ngIf="(info.businessDiversityInfo[0].minorityOwned == false || info.businessDiversityInfo[0].minorityOwned == null)">
+            <i class="bi-dash"></i>
+          </ng-container>
+          <ng-container *ngIf="(info.businessDiversityInfo[0].minorityOwned == true)">
+            <i class="bi-check-circle" style="color:green; font-size:20px"></i>
+          </ng-container>    
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="womenOwned">
+        <mat-header-cell *matHeaderCellDef style="background-color: #333333; color: white">Women Owned</mat-header-cell>
+          <mat-cell class="womenOwned-cell"
+              *matCellDef="let info">
+            <ng-container *ngIf="(info.businessDiversityInfo[0].womenOwned == false || info.businessDiversityInfo[0].womenOwned == null)">
+                <i class="bi-dash"></i>
+            </ng-container>
+            <ng-container *ngIf="(info.businessDiversityInfo[0].womenOwned == true)">
+              <i class="bi-check-circle" style="color:green; font-size:20px"></i>
+            </ng-container>               
+          </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="smallBusiness">
+        <mat-header-cell *matHeaderCellDef style="background-color: #333333; color: white">Small Business</mat-header-cell>
+        <mat-cell class="smallBusiness-cell"
+            *matCellDef="let info">
+          <ng-container *ngIf="(info.businessDiversityInfo[0].smallBusiness == false || info.businessDiversityInfo[0].smallBusiness == null)">
+              <i class="bi-dash"></i>
+          </ng-container>
+          <ng-container *ngIf="(info.businessDiversityInfo[0].smallBusiness == true)">
+            <i class="bi-check-circle" style="color:green; font-size:20px"></i>
+          </ng-container>  
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
 
-        <table class='table'>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>FEIN</th>
-              <th>Name</th>
-              <th>State</th>
-              <th>Owners</th>
-              <th>Diversity ID</th>
-              <th>Minority Owned</th>
-              <th>Women Owned</th>
-              <th>Small Business</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor='let info of filteredList'>
-              <td>{{ info.businessId}}</td>
-              <td>{{ info.businessFEIN }}</td>
-              <td>{{ info.businessName}}</td>
-              <td>{{ info.businessState}}</td>
-              <td>{{ info.businessOwners }}</td>
-              <td>{{ info.businessDiversityInfo.businessDiversityId }}</td>
-              <td *ngIf="(info.businessDiversityInfo.minorityOwned == null)">
-                <i class="icon-remove"></i>
-              </td>
-              <td *ngIf="(info.businessDiversityInfo.minorityOwned == 'true')">
-                <i class="icon-check-sign"></i>
-              </td>
-              <td *ngIf="(info.businessDiversityInfo.womenOwned == 'true')">
-                <i class="icon-check-sign"></i>
-              </td>
-              <td *ngIf="(info.businessDiversityInfo.womenOwned == null)">
-                <i class="icon-remove"></i>
-              </td>
-              <td *ngIf="(info.businessDiversityInfo.smallBusiness == 'true')">
-                <i class="icon-check-sign"></i>
-              </td>
-              <td *ngIf="(info.businessDiversityInfo.smallBusiness == null)">
-                <i class="icon-remove"></i>
-              </td>      
-            </tr>
-          </tbody>
-        </table>
+    <div id="pluswrap" *ngIf="spinnerDisplay">
+      <div class="plus">
+        <mat-spinner [diameter]="50"></mat-spinner>
       </div>
     </div>
+     <mat-paginator [pageSizeOptions]="[12,50,100]" showFirstLastButtons></mat-paginator> 
   </div>
+
+  

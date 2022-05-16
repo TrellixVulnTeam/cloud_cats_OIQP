@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
 import { catchError, map, tap } from 'rxjs/operators';
-import { IList } from "./launch";
+import { BusinessDiversityInfo } from "./launch";
 
 @Injectable({
   providedIn: 'root'
@@ -13,21 +13,29 @@ export class LaunchService {
 private cloudCatsApiUrl = 'https://biaas-t6oppuclgq-uc.a.run.app/info/businesses';
   constructor(private http: HttpClient) { }
 
-  getLists(): Observable<IList[]> {
-    return this.http.get<IList[]>(this.cloudCatsApiUrl)
-      .pipe(
-        tap(data => console.log('All: ', JSON.stringify(data))),
-        catchError(this.handleError)
-      );
+  // getLists(): Observable<BusinessDiversityInfo> {
+  //   return this.http.get<BusinessDiversityInfo>(this.cloudCatsApiUrl)
+  //     .pipe(
+  //       tap(data => console.log('All: ', JSON.stringify(data))),
+  //       catchError(this.handleError)
+  //     );
+  // }
+
+  getInfo(): Observable<BusinessDiversityInfo>{
+    return this.http.post<BusinessDiversityInfo>(this.cloudCatsApiUrl, {})
+    .pipe(
+      tap(data => console.log('All: ', JSON.stringify(data))),
+      catchError(this.handleError)
+    );
   }
 
   
-  getList(id: string): Observable<IList | undefined> {
-    return this.getLists()
-      .pipe(
-        map((places: IList[]) => places.find(x => x.businessFEIN === id))
-      );
-  }
+  // getList(id: string): Observable<BusinessDiversityInfo | undefined> {
+  //   return this.getLists()
+  //     .pipe(
+  //       map((places: IList[]) => places.find(x => x.businessInfoList[0].businessFEIN === id))
+  //     );
+  // }
 
   private handleError(err: HttpErrorResponse): Observable<never> {
     let errorMessage = '';
