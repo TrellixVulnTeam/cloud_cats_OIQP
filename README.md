@@ -2,6 +2,7 @@
 ## Data Sources
 1. [City of New York](https://data.cityofnewyork.us/Business/M-WBE-LBE-and-EBE-Certified-Business-List/ci93-uc8s)
    - API End Point - https://data.cityofnewyork.us/resource/ci93-uc8s.json
+2. [State Texas](https://comptroller.texas.gov/purchasing/vendor/registration/search-tips.php)
 
 
 ## UI
@@ -24,3 +25,6 @@ The database is gcp cloud spanner. There was a one time dataload with latest dat
 ## Cloud Scheduler
 There is a scheduled job that runs every saturday night at 11:45pm. This scheduled job runs and makes an HTTP Get request to a java API.
 The Java API will get the latest data from the configured datasource and sync the data to cloud spanner.
+
+## Cloud Functions
+There is a cloud function deployed that will sync the texas company data to our local database. A cloud scheduled job will need to call this function one a week to sync the data weekly.
