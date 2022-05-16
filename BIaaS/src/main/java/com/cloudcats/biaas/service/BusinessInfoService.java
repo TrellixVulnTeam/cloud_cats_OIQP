@@ -49,18 +49,19 @@ public class BusinessInfoService implements IBusinessInfoService {
         Page<BusinessInfo> businessInfoPage;
 
         if (searchBy != null && !searchBy.isEmpty()) {
-            List<BusinessInfo> businessInfos = businessInfoRepo.findBusinessInfosByBusinessName(searchBy);
+            List<BusinessInfo> businessInfos = businessInfoRepo.findByBusinessName("%" + searchBy + "%");
             businessInfoPage = new PageImpl<>(businessInfos, pageable, businessInfos.size());
         } else {
             businessInfoPage = businessInfoRepo.findAll(pageable);
         }
 
-        if (businessInfoPage.hasContent()) {
+    if (businessInfoPage.hasContent()) {
             businessInfoPageResponse.setPageNumber(businessInfoPageRequest.getPageNumber());
             businessInfoPageResponse.setPageSize(pageSize);
             businessInfoPageResponse.setTotalPages(businessInfoPage.getTotalPages());
             businessInfoPageResponse.setSortBy(sortBy);
             businessInfoPageResponse.setTotalElements(businessInfoPage.getTotalElements());
+            businessInfoPageResponse.setSearchBy(searchBy);
             businessInfoPageResponse.setBusinessInfoList(businessInfoPage.getContent());
             return businessInfoPageResponse;
         }
