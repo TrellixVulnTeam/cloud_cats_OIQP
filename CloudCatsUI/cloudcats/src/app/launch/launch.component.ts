@@ -12,6 +12,7 @@ import { MatFormField } from '@angular/material/form-field';
 import { FormControl } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import * as XLSX from 'xlsx';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @Component({

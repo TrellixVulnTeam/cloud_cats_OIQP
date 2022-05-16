@@ -5,16 +5,18 @@
     border-radius: 3px;
 }
 .xcsvButton{
-    background-color: hwb(236 57% 6% / 0.95);
+    background-color: #cfcfcf;
     margin-bottom: 8px;
-    margin-left: 5px;
+    margin-left: 10px;
+    font-size: 12px;
+    padding-left: 10px;
    
 }
 
-
 .xcsvButtonx{
-    background-color: hsla(118, 86%, 72%, 0.482);
+    background-color: #cfcfcf;
     margin-bottom: 8px;
+    font-size: 12px;
 }
 
 .mat-column-businessName {

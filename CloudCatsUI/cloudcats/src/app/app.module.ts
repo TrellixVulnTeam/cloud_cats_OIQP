@@ -10,7 +10,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSortModule } from '@angular/material/sort';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -33,7 +33,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatSortModule,
     MatFormFieldModule,
     MatTableExporterModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule
     
   ],
   providers: [],

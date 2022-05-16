@@ -4,25 +4,29 @@
 
 <div class="card">
     <div class="card-body">
-      <div class="container-fluid">
+      <div class="container-fluid" style="padding: 0;">
         <div style="display: flex; justify-content: space-between;">
           <span class="text-left"><img src="./assets/images/cloudcatlogo.png"
             class="img-responsive center-block"
             style="max-height:300px;" /></span>         
-            <span style="padding-top: 60px; padding-bottom: 20px;">
-                <input class="inputStyle" stlye="width: 200px; margin-bottom: 30px;" type="input" placeholder="Filter by Business Name" [(ngModel)]='listFilter' >
+            <!-- <span style="padding-top: 60px; padding-bottom: 15px;">
+                <input class="inputStyle" stlye="width: 200px; margin-bottom: 15px;" type="input" placeholder="Filter by Business Name" [(ngModel)]='listFilter' >
             
-            </span>
+            </span> -->
         </div>
-        <span style="padding-bottom: 20px;"></span>
+        <span style="padding-bottom: 5px;"></span>
      </div>
     
    
 
 
       <div class="text-right">
-        <button class="xcsvButtonx" mat-button (click)="exporter.exportTable('xlsx')"> Export to Excel</button>
-           <button class="xcsvButton" mat-button (click)="exporter.exportTable('csv')"> Export to CSV</button>
+        <span style="padding-top: 60px; padding-bottom: 15px; padding-right: 10px;">
+          <input class="inputStyle" stlye="width: 200px; margin-bottom: 15px;" type="input" placeholder="Filter by Business Name" [(ngModel)]='listFilter' >
+        </span>
+     
+          <button class="xcsvButtonx" mat-button (click)="exporter.exportTable('xlsx')"><i class="fa fa-download"></i> Export to Excel</button>
+           <button class="xcsvButton" mat-button (click)="exporter.exportTable('csv')"><i class="fa fa-download"></i> Export to CSV</button>
       </div>
      
 
@@ -95,5 +99,5 @@
         <mat-spinner [diameter]="50"></mat-spinner>
       </div>
     </div>
-     <mat-paginator [pageSizeOptions]="[10,50,100]" showFirstLastButtons></mat-paginator> 
+     <mat-paginator [pageSizeOptions]="[10,25,50,100]" showFirstLastButtons></mat-paginator> 
   </div>
