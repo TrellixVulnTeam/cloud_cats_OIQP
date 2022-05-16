@@ -80,4 +80,4 @@ def sync_texas(request):
     for tmp_df in np.array_split(df[['index', 'index', 'CMBL Status', 'Small Business', 'WOMEN_OWNED']].values,10):
       insert_BUSINESS_DIVERSITY_INFO(database, tmp_df)
     
-    return f'Hello World!'
+    return f'Success!'
