@@ -6,9 +6,21 @@
     <div class="card-body">
       <div class="container-fluid" style="padding: 0;">
         <div style="display: flex; justify-content: space-between;">
-          <span class="text-left"><img src="./assets/images/cloudcatlogo.png"
-            class="img-responsive center-block"
-            style="max-height:300px;" /></span>         
+          <div>
+            <span class="text-left"><img src="./assets/images/cloudcatlogo.png"
+              class="img-responsive center-block"
+              style="max-height:300px;" /></span>       
+
+          </div>
+          <div style="float: right; padding-top: 50px;">
+            <span style="padding-top: 60px; padding-bottom: 10px; padding-right: 10px;">
+              <input class="inputStyle" stlye="width: 200px; margin-bottom: 15px;" type="input" placeholder="Filter by Business Name" [(ngModel)]='listFilter' >
+            </span>
+            <button class="xcsvButtonx" mat-button (click)="exporter.exportTable('xlsx')"><i class="fa fa-download"></i> Export to Excel</button>
+            <button class="xcsvButton" mat-button (click)="exporter.exportTable('csv')"><i class="fa fa-download"></i> Export to CSV</button>
+         
+          </div>
+            
             <!-- <span style="padding-top: 60px; padding-bottom: 15px;">
                 <input class="inputStyle" stlye="width: 200px; margin-bottom: 15px;" type="input" placeholder="Filter by Business Name" [(ngModel)]='listFilter' >
             
@@ -20,7 +32,7 @@
    
 
 
-      <div class="text-right">
+      <!-- <div class="text-right">
         <span style="padding-top: 60px; padding-bottom: 15px; padding-right: 10px;">
           <input class="inputStyle" stlye="width: 200px; margin-bottom: 15px;" type="input" placeholder="Filter by Business Name" [(ngModel)]='listFilter' >
         </span>
@@ -28,7 +40,7 @@
           <button class="xcsvButtonx" mat-button (click)="exporter.exportTable('xlsx')"><i class="fa fa-download"></i> Export to Excel</button>
            <button class="xcsvButton" mat-button (click)="exporter.exportTable('csv')"><i class="fa fa-download"></i> Export to CSV</button>
       </div>
-     
+      -->
 
 
      
