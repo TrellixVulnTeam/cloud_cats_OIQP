@@ -43,6 +43,8 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok:1.18.24'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 	/* Lombok dependencies end */
+	
+	testRuntimeOnly "org.junit.platform:junit-platform-commons:1.7.0"
 }
 
 dependencyManagement {

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cats.cloud.dataingestion.entity;
+package cats.cloud.dataingestion.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
