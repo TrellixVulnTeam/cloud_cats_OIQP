@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import cats.cloud.dataingestion.service.DataIngestionService;
 
 @RestController
-@RequestMapping("/nyc-data")
-public class NYCDataIngestController {
+@RequestMapping("/data")
+public class DataIngestController {
 	
 	@Autowired
 	DataIngestionService service;
@@ -17,6 +17,12 @@ public class NYCDataIngestController {
 	@GetMapping("/nyc")
 	public String getNYCData(){
 		service.saveNYCData();
+		return "Ok";
+	}
+	
+	@GetMapping("/ct")
+	public String getCTData(){
+		service.saveCTData();
 		return "Ok";
 	}
 }
