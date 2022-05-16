@@ -7,10 +7,7 @@ import com.cloudcats.biaas.repo.IBusinessDiversityInfoRepo;
 import com.cloudcats.biaas.repo.IBusinessInfoRepo;
 import com.cloudcats.biaas.repo.IMinorityOwnershipInfoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,7 +27,7 @@ public class BusinessInfoService implements IBusinessInfoService {
 
     @Override
     public List<BusinessInfo> getBusinessesInfo() {
-        return businessInfoRepo.findAll();
+        return (List<BusinessInfo>) businessInfoRepo.findAll();
     }
 
     @Override
@@ -40,22 +37,31 @@ public class BusinessInfoService implements IBusinessInfoService {
     }
 
     @Override
-    public BusinessInfoPageResponse getBusinessInfoPagination(BusinessInfoPageRequest businessInfoPaginationOption) {
+    public BusinessInfoPageResponse getBusinessInfoPagination(BusinessInfoPageRequest businessInfoPageRequest) {
         BusinessInfoPageResponse businessInfoPageResponse = new BusinessInfoPageResponse();
 
-        int pageNumber = businessInfoPaginationOption.getPageNumber() - 1;
-        int pageSize = businessInfoPaginationOption.getPageSize();
-        String sortBy = businessInfoPaginationOption.getSortBy();
-        Pageable paging = PageRequest.of(pageNumber, pageSize, Sort.by(sortBy));
+        int pageNumber = businessInfoPageRequest.getPageNumber() - 1;
+        int pageSize = businessInfoPageRequest.getPageSize();
+        String sortBy = businessInfoPageRequest.getSortBy();
+        String searchBy = businessInfoPageRequest.getSearchBy();
+        Pageable pageable = PageRequest.of(pageNumber, pageSize, Sort.by(sortBy));
 
-        Page<BusinessInfo> businessInfoPage = businessInfoRepo.findAll(paging);
+        Page<BusinessInfo> businessInfoPage;
 
-        if (businessInfoPage.hasContent()) {
-            businessInfoPageResponse.setPageNumber(businessInfoPaginationOption.getPageNumber());
+        if (searchBy != null && !searchBy.isEmpty()) {
+            List<BusinessInfo> businessInfos = businessInfoRepo.findByBusinessName("%" + searchBy + "%");
+            businessInfoPage = new PageImpl<>(businessInfos, pageable, businessInfos.size());
+        } else {
+            businessInfoPage = businessInfoRepo.findAll(pageable);
+        }
+
+    if (businessInfoPage.hasContent()) {
+            businessInfoPageResponse.setPageNumber(businessInfoPageRequest.getPageNumber());
             businessInfoPageResponse.setPageSize(pageSize);
             businessInfoPageResponse.setTotalPages(businessInfoPage.getTotalPages());
             businessInfoPageResponse.setSortBy(sortBy);
             businessInfoPageResponse.setTotalElements(businessInfoPage.getTotalElements());
+            businessInfoPageResponse.setSearchBy(searchBy);
             businessInfoPageResponse.setBusinessInfoList(businessInfoPage.getContent());
             return businessInfoPageResponse;
         }

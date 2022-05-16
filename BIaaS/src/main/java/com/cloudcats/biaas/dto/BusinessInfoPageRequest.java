@@ -7,4 +7,5 @@ public class BusinessInfoPageRequest {
     int pageNumber = 1;
     int pageSize = 100;
     String sortBy = "businessId";
+    String searchBy;
 }
