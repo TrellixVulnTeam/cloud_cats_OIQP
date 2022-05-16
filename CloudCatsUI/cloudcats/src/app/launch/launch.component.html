@@ -9,48 +9,48 @@
           <div>
             <span class="text-left"><img src="./assets/images/cloudcatlogo.png"
               class="img-responsive center-block"
-              style="max-height:300px;" /></span>       
+              style="max-height:300px;" /></span>
 
           </div>
           <div style="float: right; padding-top: 50px;">
             <span style="padding-top: 60px; padding-bottom: 10px; padding-right: 10px;">
-              <input class="inputStyle" stlye="width: 200px; margin-bottom: 15px;" type="input" placeholder="Filter by Business Name" [(ngModel)]='listFilter' >
+              <input class="inputStyle" stlye="width: 200px; margin-bottom: 15px;" type="input" placeholder="Filter by Business Name"  (blur)="onSearch()" [(ngModel)]='listFilter' >
             </span>
             <button class="xcsvButtonx" mat-button (click)="exporter.exportTable('xlsx')"><i class="fa fa-download"></i> Export to Excel</button>
             <button class="xcsvButton" mat-button (click)="exporter.exportTable('csv')"><i class="fa fa-download"></i> Export to CSV</button>
-         
+
           </div>
-            
+
             <!-- <span style="padding-top: 60px; padding-bottom: 15px;">
                 <input class="inputStyle" stlye="width: 200px; margin-bottom: 15px;" type="input" placeholder="Filter by Business Name" [(ngModel)]='listFilter' >
-            
+
             </span> -->
         </div>
         <span style="padding-bottom: 5px;"></span>
      </div>
-    
-   
+
+
 
 
       <!-- <div class="text-right">
         <span style="padding-top: 60px; padding-bottom: 15px; padding-right: 10px;">
           <input class="inputStyle" stlye="width: 200px; margin-bottom: 15px;" type="input" placeholder="Filter by Business Name" [(ngModel)]='listFilter' >
         </span>
-     
+
           <button class="xcsvButtonx" mat-button (click)="exporter.exportTable('xlsx')"><i class="fa fa-download"></i> Export to Excel</button>
            <button class="xcsvButton" mat-button (click)="exporter.exportTable('csv')"><i class="fa fa-download"></i> Export to CSV</button>
       </div>
       -->
 
 
-     
+
      <mat-table matTableExporter class="info-table mat-elevation-z8" [dataSource]="dataSource" matSort #empTbSortWithObject="matSort" #exporter="matTableExporter">
-      
+
       <ng-container matColumnDef="businessName">
           <mat-header-cell *matHeaderCellDef  mat-sort-header style="background-color: #333333; color: white">Name</mat-header-cell>
           <mat-cell *matCellDef="let info">{{info.businessName}}</mat-cell>
       </ng-container>
-  
+
       <ng-container matColumnDef="businessState">
           <mat-header-cell mat-sort-header *matHeaderCellDef style="background-color: #333333; color: white">State</mat-header-cell>
           <mat-cell class="businessState-cell"
@@ -61,7 +61,7 @@
           <mat-cell class="businessFIEN-cell"
                     *matCellDef="let info">{{info.businessFEIN}}</mat-cell>
       </ng-container>
-      <ng-container matColumnDef="businessOwners"> 
+      <ng-container matColumnDef="businessOwners">
         <mat-header-cell mat-sort-header *matHeaderCellDef style="background-color: #333333; color: white">Owners</mat-header-cell>
         <mat-cell class="businessOwners-cell"
                   *matCellDef="let info">{{info.businessOwners}}</mat-cell>
@@ -75,7 +75,7 @@
           </ng-container>
           <ng-container *ngIf="(info.businessDiversityInfo[0].minorityOwned == true)">
             <i class="bi-check-circle" style="color:green; font-size:20px"></i>
-          </ng-container>    
+          </ng-container>
         </mat-cell>
       </ng-container>
       <ng-container matColumnDef="womenOwned">
@@ -87,7 +87,7 @@
             </ng-container>
             <ng-container *ngIf="(info.businessDiversityInfo[0].womenOwned == true)">
               <i class="bi-check-circle" style="color:green; font-size:20px"></i>
-            </ng-container>               
+            </ng-container>
           </mat-cell>
       </ng-container>
       <ng-container matColumnDef="smallBusiness">
@@ -99,7 +99,7 @@
           </ng-container>
           <ng-container *ngIf="(info.businessDiversityInfo[0].smallBusiness == true)">
             <i class="bi-check-circle" style="color:green; font-size:20px"></i>
-          </ng-container>  
+          </ng-container>
         </mat-cell>
       </ng-container>
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -111,5 +111,5 @@
         <mat-spinner [diameter]="50"></mat-spinner>
       </div>
     </div>
-     <mat-paginator [pageSizeOptions]="[10,25,50,100]" showFirstLastButtons></mat-paginator> 
+     <mat-paginator [pageSizeOptions]="[10,25,50,100]" showFirstLastButtons></mat-paginator>
   </div>

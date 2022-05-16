@@ -12,7 +12,7 @@ import { MatFormField } from '@angular/material/form-field';
 import { FormControl } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import * as XLSX from 'xlsx';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import {PaginationRequest} from "./launch.model";
 
 
 @Component({
@@ -21,10 +21,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   styleUrls: ['./launch.component.css']
 })
 export class LaunchComponent implements OnInit, AfterViewInit, OnDestroy {
- 
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild('empTbSortWithObject') empTbSortWithObject = new MatSort();
- 
+
 
 
 
@@ -38,7 +38,7 @@ export class LaunchComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   set listFilter(value: string) {
     this._listFilter = value;
-    this.filteredList = this.performFilter(value);
+    // this.filteredList = this.performFilter(value);
   }
 
   spinnerDisplay : boolean = true;
@@ -56,7 +56,7 @@ export class LaunchComponent implements OnInit, AfterViewInit, OnDestroy {
       info.businessName.toLocaleLowerCase().includes(filterBy));
   }
 
-  
+
 
 
   ngOnInit(): void {
@@ -68,27 +68,35 @@ export class LaunchComponent implements OnInit, AfterViewInit, OnDestroy {
     //   error: err => this.errorMessage = err
     // });
       this.dataSource.paginator = this.paginator;
-      this.sub = this.launchService.getInfo().subscribe({
+    this.loadData(new PaginationRequest());
+
+  }
+
+  private loadData(request: PaginationRequest) {
+    this.sub = this.launchService.getInfo(request).subscribe({
       next: places => {
         this.businessInfo = places.businessInfoList;
         this.filteredList = this.businessInfo;
         this.spinnerDisplay = false;
-        this.dataSource.data = this.filteredList;  
+        this.dataSource.data = this.filteredList;
       },
       error: err => this.errorMessage = err
     });
-                                                                                                                                                                                                                                                                                                                                                                                                                                  
+
   }
 
   ngAfterViewInit(){
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.empTbSortWithObject;
   }
-  
+
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
 
-
-
+  onSearch() {
+    var request = new PaginationRequest();
+    request.searchBy = this.listFilter;
+    this.loadData(request);
+  }
 }

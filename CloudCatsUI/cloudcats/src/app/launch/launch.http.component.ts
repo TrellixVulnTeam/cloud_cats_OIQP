@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
 import { catchError, map, tap } from 'rxjs/operators';
 import { BusinessDiversityInfo } from "./launch";
+import {PaginationRequest} from "./launch.model";
 
 @Injectable({
   providedIn: 'root'
@@ -21,15 +22,15 @@ private cloudCatsApiUrl = 'https://biaas-t6oppuclgq-uc.a.run.app/info/businesses
   //     );
   // }
 
-  getInfo(): Observable<BusinessDiversityInfo>{
-    return this.http.post<BusinessDiversityInfo>(this.cloudCatsApiUrl, {})
+  getInfo(request: PaginationRequest): Observable<BusinessDiversityInfo>{
+    return this.http.post<BusinessDiversityInfo>(this.cloudCatsApiUrl, request)
     .pipe(
       tap(data => console.log('All: ', JSON.stringify(data))),
       catchError(this.handleError)
     );
   }
 
-  
+
   // getList(id: string): Observable<BusinessDiversityInfo | undefined> {
   //   return this.getLists()
   //     .pipe(
