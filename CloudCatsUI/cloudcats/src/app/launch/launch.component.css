@@ -1,0 +1,54 @@
+.inputStyle {
+    width: 250px;
+    height: 35px;
+    border-color:lightgrey;
+    border-radius: 3px;
+}
+.xcsvButton{
+    background-color: hwb(236 57% 6% / 0.95);
+    margin-bottom: 8px;
+    margin-left: 5px;
+   
+}
+
+
+.xcsvButtonx{
+    background-color: hsla(118, 86%, 72%, 0.482);
+    margin-bottom: 8px;
+}
+
+.mat-column-businessName {
+    flex: 0 0 30%;
+}
+.mat-column-businessOwners {
+    flex: 0 0 15%;
+}
+
+#pluswrap {
+    position: fixed;
+    width: 100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    top: 0;
+  }
+  
+  .plus {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .mat-row:nth-child(even){
+    background-color:#ffffff;
+}
+        
+.mat-row:nth-child(odd){
+    background-color: #e8e8e8;
+}
+.mat-row {
+    height: 5px;;
+}
+
+.headerstyle {
+    background-color: #333333; color: white;
+}
