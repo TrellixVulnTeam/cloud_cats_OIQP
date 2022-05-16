@@ -25,7 +25,7 @@ This is a Java / Gradle / Spring Boot (version 2.6.7) application that loads the
 
 ## **How To Deploy**
 
-1. Run 'gradlew jib --image=<image-container-url>' to generate and publish the latest image
+1. Run 'gradlew jib --image=add-your-image-container-ur' to generate and publish the latest image
 2. Login to Google Cloud Platform
 3. Navigate to 'Cloud Run'
 4. Select your service
